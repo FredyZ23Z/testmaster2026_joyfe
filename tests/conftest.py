@@ -1,4 +1,12 @@
+import sys
+from pathlib import Path
+
 import pytest
+
+# Asegura que la raiz del proyecto este disponible para importar app.py
+RAIZ_PROYECTO = Path(__file__).resolve().parents[1]
+if str(RAIZ_PROYECTO) not in sys.path:
+    sys.path.insert(0, str(RAIZ_PROYECTO))
 
 from app import crear_app
 
